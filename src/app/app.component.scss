@@ -1,0 +1,57 @@
+
+  .body{
+    margin: 0 2rem 0 2rem
+  }
+
+  .header {
+    overflow: hidden;
+    padding:15px 0 15px;
+    border-bottom: 2px solid #15151512;
+    font-family: 'Open Sans';
+
+  }
+
+  .header a {
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 4px;
+    font-weight: 400px;
+  }
+
+  .header span{
+    font-size: 12px;
+    font-weight: 400px;
+    padding: 12px;
+  }
+
+  .header .logo {
+    color: #6A983C;
+  }
+  .header-right {
+    float: right;
+  }
+
+  .link{
+    color: #6A983C;
+  }
+
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    .header-right {
+      float: none;
+    }
+  }
+
+
+
+
+
+

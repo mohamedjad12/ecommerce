@@ -1,0 +1,16 @@
+.page-body {
+  display: flex;
+}
+
+.sidebar {
+  width: 25%;
+}
+
+.nav-fill {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}

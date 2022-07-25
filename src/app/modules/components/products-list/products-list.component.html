@@ -1,0 +1,40 @@
+
+  <div class="products-list">
+    <!-- Start Product -->
+    <div *ngFor="let product of productsList | filter:searchText" class="poduct-card">
+
+      <div class="data">
+        <div class="img-scal" role="button">
+          <img class="img-fluid" [src]="product.images[0]" />
+        </div>
+
+        <div class="product-content">
+
+
+          <a class="head">
+            {{product?.title}}
+          </a>
+
+          <p>
+            {{product?.description}}
+          </p>
+
+          <div class="rating">
+            <span>
+              <h6>{{product?.price | currency:'EGP'}}</h6>
+            </span>
+            <span> <button (click)="addProduct($event)" class="button" role="button">
+                Buy now
+              </button></span>
+
+
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+    <!-- End Product -->
+  </div>

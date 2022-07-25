@@ -1,0 +1,34 @@
+<div class="wrapper site-header__wrapper">
+  <div class="site-header__start">
+    <span>Freshnesecom</span>
+  </div>
+
+  <div class="search">
+      <select [(ngModel)]="selectcategory" (ngModelChange)="filter($event)" class="categories">
+        <option>All categories<img src="../assets/Headers/Default/Vector.png"/></option>
+        <option *ngFor=" let allcategorie of allcategories" >{{allcategorie}}</option>
+      </select>
+    <span>
+      <input
+      [(ngModel)]="searchText"
+      (ngModelChange)="searchT($event)"
+        type="text"
+        placeholder="Search Products, categories ..."
+        class="input-search" />
+      <img
+        class="icon-search"
+        src="../assets/Headers/Default/ic-actions-search.png"
+    /></span>
+  </div>
+
+  <div class="site-header__end">
+    <span class="icon">
+      <img src="../assets/Headers/Default/ic-actions-user.png" />
+    </span>
+    <span class="icon"
+      ><img class="icon-img" src="../assets/Headers/Default/ic-ecommerce-basket.png"
+    />
+  </span>
+  <div class="counter">{{Productcount}}</div>
+  </div>
+</div>

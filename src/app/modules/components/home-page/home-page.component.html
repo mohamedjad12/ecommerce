@@ -1,0 +1,12 @@
+<app-heder [Productcount]="count" (search)="searchProduct($event)" (filterProduct)="filterCategory($event)" ></app-heder>
+<div class="nav-fill">
+  <p *ngFor="let department of departments">
+    {{ department }}
+    <span><img src="../assets/Headers/Default/Vector.png" /> </span>
+  </p>
+</div>
+<section class="page-body">
+  <app-sidebar class="sidebar" (filterProduct)="filterCategory($event)"></app-sidebar>
+  <app-products-list (counter)="addProduct($event)"  [searchText]="searchText" [productsList]="productsList"> </app-products-list>
+</section>
+
