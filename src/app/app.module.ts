@@ -13,6 +13,10 @@ import { HomePageComponent } from './modules/components/home-page/home-page.comp
 import { SidebarComponent } from './modules/components/sidebar/sidebar.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/store';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 
@@ -33,6 +37,10 @@ import { counterReducer } from './store/store';
     FormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+
+
     StoreModule.forRoot({counter: counterReducer})
 
   ],

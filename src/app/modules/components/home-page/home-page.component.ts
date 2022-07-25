@@ -4,6 +4,7 @@ import { Product } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
 import { Store } from '@ngrx/store';
 import { StoreInterface } from 'src/app/store/store';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home-page',
@@ -32,7 +33,9 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private _products: ProductsService,
-    private store: Store<StoreInterface>
+    private store: Store<StoreInterface>,
+    private spinner: NgxSpinnerService,
+
   ) {
     store.subscribe((data) => (this.count = data.counter.n));
   }
@@ -42,12 +45,16 @@ export class HomePageComponent implements OnInit {
   }
 
   getProductsList() {
+    this.spinner.show();
     this.subscription.add(
       this._products.getProductsList(this.params).subscribe(
         (res) => {
+          this.spinner.hide();
           this.productsList = res.products;
         },
-        (error) => {}
+        (error) => {
+          this.spinner.hide();
+        }
       )
     );
   }
@@ -61,12 +68,16 @@ export class HomePageComponent implements OnInit {
   }
 
   getProductsOfCategory(param: any) {
+    this.spinner.show();
     this.subscription.add(
       this._products.getProductsofCategory(param).subscribe(
         (res) => {
+          this.spinner.hide();
           this.productsList = res.products;
         },
-        (error) => {}
+        (error) => {
+          this.spinner.hide();
+        }
       )
     );
   }
